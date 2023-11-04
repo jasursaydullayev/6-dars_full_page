@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-
+  
+  // Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ErrorPage from "./pages/ErrorPage";
+import SingleImage from "./pages/SingleImage";
 function App() {
   const roots = createBrowserRouter([
     {
@@ -23,6 +25,10 @@ function App() {
         {
           path: "contact",
           element: <Contact />
+        },
+        {
+          path: 'singlepage/:id',
+          element: <SingleImage/>
         },
       ],
     },

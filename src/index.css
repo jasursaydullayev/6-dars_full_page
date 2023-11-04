@@ -17,6 +17,7 @@ html{
 body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(rgba(5,0,2,0.1), rgba(9,9,9,0.1));
 }
 .container{
     max-width: 1000px;
@@ -88,7 +89,17 @@ form button {
 img{
     object-fit: cover;
     width: 100%;
+    object-position: center;
     border-radius: 10px;
+}
+.card{
+    width: 315px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+.card:hover{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -109,3 +120,56 @@ img{
     height: 220px;
     }
  }
+ .user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+ }
+ .description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+ }
+ .description p {
+    font-size: 20px;
+    font-weight: 500;
+ }
+ .profile_image{
+    width: 170px;
+    border-radius: 50%;
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.3);
+ }
+ .user__name strong{
+    margin-right: 5px;
+ }
+ .user__name p {
+    font-size: 18px;
+  margin-bottom: 10px;
+    font-weight: 500;
+ }
+ .bio{
+    width: 500px;
+ }
+ .badge{
+    background-color: pink;
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 50%;
+ }
+ .btn-likes{
+    background-color: yellow;
+    border: 1px solid blue;
+    color: red;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn-likes:hover{
+    background-color: blue;
+    color: wheat;
+}
