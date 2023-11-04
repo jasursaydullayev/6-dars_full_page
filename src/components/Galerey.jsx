@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../context/GlobalState";
-import { useContext } from "react";
+import { useGlobalContext } from "../hook/useGlobalContext";
 
 function Galerey({ data: { results } }) {
-  const {addNewImage} = useContext(GlobalContext)
+  const { addNewImage } = useGlobalContext();
   console.log(results);
   return (
     <div className="galerey">
@@ -12,13 +11,11 @@ function Galerey({ data: { results } }) {
           return (
             <li className="card" key={image.id}>
               <Link to={`singlepage/${image.id}`}>
-                <img 
-                src={image.urls.regular} 
-                alt=""
-                width={300} 
-                height={300} />
+                <img src={image.urls.regular} alt="" width={300} height={300} />
               </Link>
-              <button className="btn-likes" onClick={() => addNewImage(image)}>Like ❤️</button>
+              <button className="btn-likes" onClick={() => addNewImage(image)}>
+                Like ❤️
+              </button>
             </li>
           );
         })}

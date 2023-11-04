@@ -3,10 +3,10 @@ const changeState = (state, action) => {
   switch (action.type) {
     case "SET_DATA":
       return { ...state, data: action.payload };
-      case "SET_ISPENDING":
-        return { ...state, isPending: action.payload };
-        case "SET_ERROR":
-            return { ...state, error: action.payload };
+    case "SET_ISPENDING":
+      return { ...state, isPending: action.payload };
+    case "SET_ERROR":
+      return { ...state, error: action.payload };
     default:
       return state;
   }
@@ -23,7 +23,7 @@ export function useFetch(url) {
 
   useEffect(() => {
     const getData = async () => {
-        dispatch({ type: "SET_ISPENDING", payload: true });
+      dispatch({ type: "SET_ISPENDING", payload: true });
       try {
         const req = await fetch(url);
         if (!req.ok) {

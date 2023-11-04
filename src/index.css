@@ -1,175 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap');
-a{
-    text-decoration: none;
-}
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-ul, ol {
-    list-style: none;
-}
-html{
-   height: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
 
+:root{
+  --bg-color: #fff;
+  --text-color:#333; 
+  --bg-other-color: #fff;
+  --box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.3);
+  --badge-bg-color: pink;
+  --badge-color: white;
+}
+.dark-mode{
+  --bg-color: #333;
+  --text-color:#fff; 
+  --bg-other-color: #31234567;
+  --box-shadow: 1px 2px 4px 1px #FFF;
+  --badge-bg-color: white;
+  --badge-color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+ul,
+ol {
+  list-style: none;
+}
+html {
+  height: 100%;
 }
 body {
   height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(rgba(5,0,2,0.1), rgba(9,9,9,0.1));
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(rgba(5, 0, 2, 0.1), rgba(9, 9, 9, 0.1));
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
-.container{
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
-.logo{
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
 }
-.navbar{
-    margin-top:30px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+.navbar {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
-.navbar nav{
-    display: flex;
-    gap: 20px;
+.navbar nav {
+  display: flex;
+  gap: 40px;
 }
-.navbar a{
-    font-weight:500;
-    font-size: 18px;
-    color: #000;
+.navbar a {
+  font-weight: 500;
+  font-size: 18px;
+  color: inherit;
+  padding-bottom: 2px;
 }
-.navbar a:hover{
-    border-bottom: 2px solid #222;
+.navbar a:hover {
+  border-bottom: 3px solid var(--text-color);
 }
-.error-page{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
-form{
-    display: flex;
-    gap: 15px;
+form {
+  display: flex;
+  gap: 15px;
+  border-radius: 50px;
+  margin-left: 70px;
 }
 form input {
-    padding: 5px 10px;
-    font-size: 20px;
-    font-family: inherit;
+  background-color: var(--bg-other-color);
+  color: var(--text-color); 
+  padding: 2px 25px;
+  width: 700px;
+  height: 45px;
+  font-size: 20px;
+  font-family: inherit;
+  border: 0;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 form button {
-    border: 0;
-    background-color: #333;
-    color: #fff;
-    font-family: inherit;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 15px;
+  height: 45px;
+  width: 110px;
+  border: 0;
+  background-color: var(--bg-other-color);
+  color: var(--text-color);
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-.home{
-    margin-bottom: 15px;
+.home {
+  margin-bottom: 15px;
 }
-.galerey{
-    margin-top: 30px;
+.galerey {
+  margin-top: 30px;
 }
 .galerey ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
-img{
-    object-fit: cover;
-    width: 100%;
-    object-position: center;
-    border-radius: 10px;
+img {
+  object-fit: cover;
+  width: 100%;
+  object-position: center;
+  border-radius: 10px;
 }
-.card{
-    width: 315px;
-    height: 300px;
-    border-radius: 10px;
-    margin-bottom: 7px;
-    margin-top: 10px;
+.card {
+  width: 315px;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 7px;
+  margin-top: 10px;
 }
-.card:hover{
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+.card:hover {
+  box-shadow: var(--box-shadow);
 }
-
-@media screen and (max-width:960px) {
-   img{
-    width: 100%;
-   }
-}
-@media screen and (max-width:400px) {
-    body {
-        text-align: center;
-    }
-    .navbar{
-        flex-direction: column;
-    }
-    img{
+@media screen and (max-width: 990px) {
+  body {
+    text-align: center;
+  }
+  img {
     width: 100%;
     height: 220px;
-    }
- }
- .user{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
- }
- .description{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 15px;
-    margin-bottom: 25px;
- }
- .description p {
-    font-size: 20px;
-    font-weight: 500;
- }
- .profile_image{
-    width: 170px;
-    border-radius: 50%;
-    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.3);
- }
- .user__name strong{
-    margin-right: 5px;
- }
- .user__name p {
-    font-size: 18px;
-  margin-bottom: 10px;
-    font-weight: 500;
- }
- .bio{
-    width: 500px;
- }
- .badge{
-    background-color: pink;
-    display: inline-block;
-    height: 28px;
-    width: 28px;
-    text-align: center;
-    border-radius: 50%;
- }
- .btn-likes{
-    background-color: yellow;
-    border: 1px solid blue;
-    color: red;
-    font-size: 14px;
-    transition: 0.3s;
+  }
 }
-.btn-likes:hover{
-    background-color: blue;
-    color: wheat;
+
+@media screen and (max-width: 960px) {
+  img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  body {
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: 300px;
+  }
+  form {
+    margin-left: 0px;
+  }
+  form button {
+    font-size: 15px;
+  }
+  .navbar nav {
+    gap: 15px;
+  }
+  .card{
+    margin-left: 20px;
+  }
+}
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.description p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.profile_image {
+  width: 170px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+.user__name strong {
+  margin-right: 5px;
+}
+.user__name p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.bio {
+  width: 500px;
+}
+.badge {
+  background-color: var(--badge-bg-color);
+  color: var(--badge-color);
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  text-align: center;
+  border-radius: 50%;
+}
+.btn-likes {
+  background-color: yellow;
+  border: 1px solid blue;
+  color: red;
+  font-size: 14px;
+  transition: 0.3s;
+  width: 70px;
+  height: 25px;
+}
+.btn-likes:hover {
+  background-color: #fff;
+  color: red;
+  border: 2px solid #333;
+}
+.mode-btn{
+  border: 0;
+  width: 120px;
+  height: 30px;
+  background-color: var(--bg-other-color);
+  color: var(--text-color);
+  border: 2px solid blue;
+  border-radius: 5px;
+  font-size: 15px;
+  
+}
+.button{
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 7px 15px;
+  background-color: var(--bg-other-color);
+  color: var(--text-color);
+}
+.button:hover{
+  background-color: #111;
+  color: #fff;
+  border: 2px solid blue;
+}
+.button-inner{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.wrapper{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.login{
+  width: 120px;
+  height: 30px;
+  background-color: var(--bg-other-color);
+  color: var(--text-color);
+  border: 2px solid blue;
+  text-align: center;
+  padding-bottom: 0;
+  border-radius: 5px;
+}
+.user-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.user-img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }

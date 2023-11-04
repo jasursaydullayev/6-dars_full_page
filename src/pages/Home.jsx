@@ -14,7 +14,6 @@ function Home() {
   };
   return (
     <div>
-      <h1 className="home">Search Any Image:</h1>
       <Search setNewUrl={setNewUrl} />
       {data && <Galerey data={data} />}
       {isPending && <h1>Loading</h1>}

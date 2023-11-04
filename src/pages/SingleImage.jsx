@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hook/useFetch";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { useGlobalContext } from "../hook/useGlobalContext";
 
 function SingleImage() {
-  const data = useContext(GlobalContext)
+  const data = useGlobalContext();
   console.log(data);
   const { id } = useParams();
   const url = `https://api.unsplash.com/photos/${id}?client_id=${

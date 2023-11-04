@@ -1,18 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-  
-  // Pages
+
+// Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ErrorPage from "./pages/ErrorPage";
 import SingleImage from "./pages/SingleImage";
+import LikedImages from "./pages/LikedImages";
+import Galerey from "./components/Galerey";
+import Login from "./pages/Login";
 function App() {
   const roots = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
-      errorElement: <ErrorPage/>,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -24,11 +27,19 @@ function App() {
         },
         {
           path: "contact",
-          element: <Contact />
+          element: <Contact />,
         },
         {
-          path: 'singlepage/:id',
-          element: <SingleImage/>
+          path: "singlepage/:id",
+          element: <SingleImage />,
+        },
+        {
+          path: "LikedImages",
+          element: <LikedImages />,
+        },    
+        {
+          path: "login",
+          element: <Login />,
         },
       ],
     },
