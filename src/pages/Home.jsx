@@ -6,7 +6,7 @@ import { useFetch } from "../hook/useFetch";
 const API =
 'https://api.unsplash.com/search/photos?client_id=ErCDu4qKOnu9g_66d0Nr-pSxTaKup8nD_-MVREwzYbw&page=1&query=';
 function Home() {
-  const [url, setUrl] = useState(API + 'features');
+  const [url, setUrl] = useState(API + 'hight');
   const {data, isPending, error} = useFetch(url)
    const setNewUrl = (url) => {
     setUrl(API + url)
