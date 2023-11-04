@@ -1,21 +1,21 @@
-import { useRouteError, Link } from 'react-router-dom'
+import { useRouteError, Link } from "react-router-dom";
 
 function ErrorPage() {
-    const error = useRouteError()
-    if(error.status === 404){
-        return(
-            <div className="error-page">
-                <h1>Page not Found</h1>
-                <Link to="/">Home</Link>
-            </div>
-        )
-    }
-  return (
-    <div className='error-page'>
-        <h1>Something went wrong :(</h1>
+  const error = useRouteError()
+  if (error.status === 404) {
+    return (
+      <div className="error-page">
+        <h1>Page not Found</h1>
         <Link to="/">Home</Link>
+      </div>
+    );
+  }
+  return (
+    <div className="error-page">
+      <h1>Something went wrong :(</h1>
+      <Link to="/">Home</Link>
     </div>
-  )
+  );
 }
 
-export default ErrorPage
+export default ErrorPage;
